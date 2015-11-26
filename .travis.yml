@@ -1,0 +1,8 @@
+language: java
+jdk:
+  - oraclejdk8
+env: MAVEN_OPTS="-Xmx512m -XX:MaxPermSize=128m"
+sudo: false
+cache:
+  directories:
+    - $HOME/.m2/repository/
