@@ -6,6 +6,10 @@ package net.gfu.seminar.spring.lab.student;
  * <code>
  * java cp ./target/classes/ net.gfu.seminar.spring.lab.student.App Anna Gramm
  * </code>
+ * or with maven:
+ * <code>
+ * mvn exec:java -Dexec.mainClass=net.gfu.seminar.spring.lab.student.App -Dexec.args="Anna Gramm"
+ * </code>
  */
 public class App {
     public static void main(String[] args) {
