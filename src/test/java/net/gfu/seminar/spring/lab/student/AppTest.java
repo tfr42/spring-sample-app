@@ -1,4 +1,4 @@
-package net.gfu.seminar.spring.helloworld.student;
+package net.gfu.seminar.spring.lab.student;
 
 import net.gfu.seminar.spring.lab.student.App;
 import org.junit.Test;
