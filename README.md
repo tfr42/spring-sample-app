@@ -7,4 +7,4 @@ mvn archetype:generate -DgroupId=net.gfu.seminar.spring.lab.student -DartifactId
 ```
 
 ## Continuous Integration
-[![Travis Build Status](https://travis-ci.org/tfr42/spring-sample-app.png?branch=trainer)](https://travis-ci.org/tfr42/spring-sample-app)
+[![Travis Build Status](https://travis-ci.org/tfr42/spring-sample-app.png?branch=master)](https://travis-ci.org/tfr42/spring-sample-app)
