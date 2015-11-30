@@ -1,5 +1,9 @@
 package net.gfu.seminar.spring.lab.student;
 
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 /**
  * Hello, world! application.
  * Run with:
@@ -13,10 +17,18 @@ package net.gfu.seminar.spring.lab.student;
  */
 public class App {
     public static void main(String[] args) {
-        String firstname = args.length > 0 && args[0] != null ? args[0] : "Hans";
+    	String firstname = args.length > 0 && args[0] != null ? args[0] : "Hans";
         String lastname = args.length > 1 && args[1] != null ? args[1] : "Dampf";
         GreetingService greetingService = new MockGreetingService();
         String message = greetingService.sayHelloTo(new Guest(firstname, lastname));
         System.out.println(message);
+        
+    	// Same as above but now with Spring DI
+        //ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
+        GreetingService service = context.getBean("greeting", GreetingService.class);
+        String springMessage = service.sayHello();
+        System.out.println(springMessage);
+        context.close();
     }
 }

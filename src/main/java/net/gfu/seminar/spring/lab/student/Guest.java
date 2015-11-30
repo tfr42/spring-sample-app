@@ -6,6 +6,10 @@ package net.gfu.seminar.spring.lab.student;
 public class Guest {
     private String firstName;
     private String lastName;
+    
+    public Guest() {
+		// TODO Auto-generated constructor stub
+	}
 
     public Guest(String firstName, String lastName) {
         this.firstName = firstName;

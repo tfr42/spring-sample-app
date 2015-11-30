@@ -5,5 +5,8 @@ package net.gfu.seminar.spring.lab.student;
  */
 public interface GreetingService {
 
+	@Deprecated
     String sayHelloTo(Guest guest);
+	
+	String sayHello();
 }
