@@ -1,5 +1,7 @@
 package net.gfu.seminar.spring.lab.student;
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 /**
  * Hello, world! application.
  * Run with:
@@ -18,5 +20,11 @@ public class App {
         GreetingService greetingService = new MockGreetingService();
         String message = greetingService.sayHelloTo(new Guest(firstname, lastname));
         System.out.println(message);
-    }
+
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        GreetingService service = context.getBean("greeting", GreetingService.class);
+        String springMessage = service.sayHello();
+        System.out.println(springMessage);
+        context.close();
+}
 }
