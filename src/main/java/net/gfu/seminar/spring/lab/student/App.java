@@ -1,9 +1,7 @@
 package net.gfu.seminar.spring.lab.student;
 
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * Hello, world! application.
@@ -18,12 +16,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class App {
     public static void main(String[] args) {
-        String firstname = args.length > 0 && args[0] != null ? args[0] : "Hans";
-        String lastname = args.length > 1 && args[1] != null ? args[1] : "Dampf";
-        GreetingService greetingService = new MockGreetingService();
-        String message = greetingService.sayHelloTo(new Guest(firstname, lastname));
-        System.out.println(message);
-
         // ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
         GreetingService service = context.getBean("greeting", GreetingService.class);
