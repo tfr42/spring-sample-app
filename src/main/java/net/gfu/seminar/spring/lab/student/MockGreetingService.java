@@ -8,11 +8,7 @@ import javax.annotation.PreDestroy;
  */
 public class MockGreetingService implements GreetingService {
 
-	private Guest guest;
-	
-	public MockGreetingService() {
-		// TODO Auto-generated constructor stub
-	}
+	final private Guest guest;
 	
 	public MockGreetingService(Guest guest) {
 		this.guest = guest;
@@ -24,7 +20,7 @@ public class MockGreetingService implements GreetingService {
 	 */
 	@Deprecated
     public String sayHelloTo(Guest guest) {
-		this.setGuest(guest);
+		//this.setGuest(guest);
 		return this.sayHello();
     }
 
@@ -37,10 +33,6 @@ public class MockGreetingService implements GreetingService {
 		return guest;
 	}
 
-	public void setGuest(Guest guest) {
-		this.guest = guest;
-	}
-	
 	@PostConstruct
 	public void init() {
 		System.out.println("Init was called on " + this.toString());

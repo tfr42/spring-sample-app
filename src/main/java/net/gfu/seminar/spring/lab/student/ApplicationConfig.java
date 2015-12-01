@@ -9,18 +9,11 @@ public class ApplicationConfig {
 
 	@Bean
 	public Guest myGuest() {
-		Guest guest = new Guest();
-		guest.setFirstName("Anna");
-		guest.setLastName("Gramm");
-		return guest;
+		return new Guest("Anna", "Gramm");
 	}
 	
-	// Used @PostContruct / @PreDestroy instead
-	// @Bean(initMethod = "init", destroyMethod = "destroy")
 	@Bean
 	public GreetingService greeting() {
-		MockGreetingService greetingService = new MockGreetingService();
-		greetingService.setGuest(myGuest());
-		return greetingService;
+		return new MockGreetingService(myGuest());
 	}
 }
