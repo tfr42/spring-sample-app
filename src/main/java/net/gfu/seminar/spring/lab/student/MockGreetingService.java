@@ -1,5 +1,8 @@
 package net.gfu.seminar.spring.lab.student;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 /**
  * A simple mock greeting service saying hello.
  */
@@ -38,10 +41,12 @@ public class MockGreetingService implements GreetingService {
 		this.guest = guest;
 	}
 	
+	@PostConstruct
 	public void init() {
 		System.out.println("Init was called on " + this.toString());
 	}
 	
+	@PreDestroy
 	protected void destroy() {
 		System.out.println("Destroy was called on " + this.toString());
 	}

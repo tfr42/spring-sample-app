@@ -15,7 +15,9 @@ public class ApplicationConfig {
 		return guest;
 	}
 	
-	@Bean(initMethod = "init", destroyMethod = "destroy")
+	// Used @PostContruct / @PreDestroy instead
+	// @Bean(initMethod = "init", destroyMethod = "destroy")
+	@Bean
 	public GreetingService greeting() {
 		MockGreetingService greetingService = new MockGreetingService();
 		greetingService.setGuest(myGuest());
