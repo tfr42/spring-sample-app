@@ -4,6 +4,7 @@
 .settings
 .classpath
 .project
+.springBeans
 
 # Database files
 *.db
