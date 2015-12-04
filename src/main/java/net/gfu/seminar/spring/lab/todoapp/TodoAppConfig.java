@@ -26,12 +26,16 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @Configuration
 @ComponentScan
 @EnableTransactionManagement
-@PropertySource("file:${user.dir}/database.properties")
 @EnableJpaRepositories
+@PropertySource("classpath:database.properties")
+@EnableWebMvc
+// Folgend Beispiel für Dateisystem-Ort + Variablenersetzung
+// @PropertySource("file:${user.dir}/database.properties")
 // Ohne Parameteter gleichbedeutend mit:
 // @ComponentScan(basePackageClasses = {TodoAppConfig.class})
 public class TodoAppConfig {
