@@ -5,7 +5,7 @@
   <groupId>net.gfu.seminar.spring.lab.student</groupId>
   <artifactId>spring-sample-app</artifactId>
   <version>1.0.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
 
   <name>spring-sample-app</name>
   <url>https://github.com/tfr42/spring-sample-app</url>
