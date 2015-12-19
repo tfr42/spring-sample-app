@@ -1,16 +1,23 @@
 package net.gfu.seminar.spring.lab.student;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.inject.Inject;
+import javax.inject.Named;
+
 /**
  * A simple mock greeting service saying hello.
  */
+@Named("greeting")
 public class MockGreetingService implements GreetingService {
-	
+
+	@Inject
 	private Guest guest;
 	
 	public MockGreetingService() {
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public MockGreetingService(Guest guest) {
 		this.guest = guest;
 	}
@@ -37,11 +44,13 @@ public class MockGreetingService implements GreetingService {
 	public void setGuest(Guest guest) {
 		this.guest = guest;
 	}
-	
+
+	@PostConstruct
 	public void init() {
 		System.out.println("Init was called on " + this.toString());
 	}
-	
+
+	@PreDestroy
 	protected void destroy() {
 		System.out.println("Destroy was called on " + this.toString());
 	}

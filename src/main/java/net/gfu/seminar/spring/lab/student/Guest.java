@@ -1,8 +1,11 @@
 package net.gfu.seminar.spring.lab.student;
 
+import javax.inject.Named;
+
 /**
  * A guest.
  */
+@Named("guest")
 public class Guest {
     private String firstName;
     private String lastName;
